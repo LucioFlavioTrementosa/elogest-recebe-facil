@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- ============================================================
+    Elogest Recebe Fácil — index.html (Login)
+    Protótipo visual (frontend puro). Sem backend real: o login
+    valida contra usuários simulados em js/store.js.
+    Login de demonstração: usuário "admin", senha "123456".
+    ============================================================ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/webp" href="assets/icon-elogest.webp">
+    <title>Elogest Recebe Fácil — Login</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="login">
+        <div class="login__card">
+
+            <div class="login__logo">
+                <img src="assets/logo-elogest.webp" alt="Elogest Recebe Fácil" class="login__logo-img">
+                <p class="login__subtitulo">Faça login para acessar o sistema</p>
+            </div>
+
+            <form class="login__form" id="form-login" novalidate>
+
+                <div class="campo">
+                    <label class="campo__label" for="usuario">Usuário</label>
+                    <div class="campo__wrapper">
+                        <input
+                            type="text"
+                            id="usuario"
+                            name="usuario"
+                            class="form-input"
+                            placeholder="Digite seu usuário"
+                            required
+                            autocomplete="username"
+                        >
+                    </div>
+                    <span class="campo__erro" id="erro-usuario"></span>
+                </div>
+
+                <div class="campo">
+                    <label class="campo__label" for="senha">Senha</label>
+                    <div class="campo__wrapper">
+                        <input
+                            type="password"
+                            id="senha"
+                            name="senha"
+                            class="form-input campo__input--com-icone"
+                            placeholder="Digite sua senha"
+                            required
+                            autocomplete="current-password"
+                        >
+                        <button type="button" class="campo__icone" id="btn-ver-senha" aria-label="Mostrar senha" style="pointer-events:auto;cursor:pointer;border:none;background:none;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                        </button>
+                    </div>
+                    <span class="campo__erro" id="erro-senha"></span>
+                </div>
+
+                <button type="submit" class="login__btn" id="btn-entrar">
+                    Entrar no Sistema
+                </button>
+
+                <p class="login__esqueci">
+                    Esqueceu a senha? <a href="#" id="link-recuperar">Recuperar acesso</a>
+                </p>
+
+            </form>
+
+            <div class="login__dica">
+                <strong>Acesso de demonstração:</strong> usuário <strong>admin</strong> · senha <strong>123456</strong>
+            </div>
+
+            <div class="login__rodape">
+                <p>Elogest Recebe Fácil © 2026 — Protótipo visual (dados simulados)</p>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/store-api.js"></script>
+    <script src="js/format.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

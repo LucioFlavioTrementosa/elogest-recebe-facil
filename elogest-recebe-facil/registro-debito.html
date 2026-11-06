@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- ============================================================
+    Elogest Recebe Fácil — registro-debito.html
+    Registro de novo débito vinculado a um cliente (dados
+    simulados — js/store.js).
+    ============================================================ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/webp" href="assets/icon-elogest.webp">
+    <title>Elogest Recebe Fácil — Novo Débito</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <aside class="sidebar" id="sidebar"></aside>
+        <div class="overlay" id="overlay"></div>
+
+        <main class="conteudo-principal">
+            <header class="header" id="header"></header>
+
+            <div class="conteudo-area">
+
+                <div class="pagina-titulo-area">
+                    <h1 class="titulo-pagina">Registrar Novo Débito</h1>
+                    <p class="descricao-pagina">Vincule um débito a um cliente cadastrado</p>
+                </div>
+
+                <form class="form-container" id="form-debito" novalidate>
+
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label class="form-label" for="cliente_debito">Cliente *</label>
+                            <select id="cliente_debito" name="cliente_debito" class="form-select" required>
+                                <option value="">Carregando clientes...</option>
+                            </select>
+                            <span class="form-field__erro" id="erro-cliente_debito"></span>
+                        </div>
+                        <div class="form-field">
+                            <label class="form-label" for="valor_debito">Valor (R$) *</label>
+                            <input type="text" id="valor_debito" name="valor_debito" class="form-input" placeholder="Ex: 350,00" required inputmode="decimal">
+                            <span class="form-field__erro" id="erro-valor_debito"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label class="form-label" for="vencimento_debito">Data de Vencimento *</label>
+                            <input type="date" id="vencimento_debito" name="vencimento_debito" class="form-input" required>
+                            <span class="form-field__erro" id="erro-vencimento_debito"></span>
+                        </div>
+                        <div class="form-field">
+                            <label class="form-label" for="criacao_debito">Data de Criação</label>
+                            <input type="date" id="criacao_debito" name="criacao_debito" class="form-input">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-field form-field--full">
+                            <label class="form-label" for="descricao_debito">Descrição do Débito *</label>
+                            <textarea id="descricao_debito" name="descricao_debito" class="form-input form-textarea" placeholder="Ex: Compra de arroz, feijão e óleo — Nota fiscal 12345" rows="3" maxlength="500" required></textarea>
+                            <span class="form-field__erro" id="erro-descricao_debito"></span>
+                        </div>
+                    </div>
+
+                    <div class="carrinho-itens">
+                        <div class="carrinho-itens__header">
+                            <h3 class="carrinho-itens__titulo">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                                Itens da compra (opcional)
+                            </h3>
+                            <button type="button" class="carrinho-itens__add" id="btn-add-item">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                                Adicionar item
+                            </button>
+                        </div>
+                        <p class="carrinho-itens__dica">Detalhar os produtos aqui alimenta o mini CRM do cliente (o que ele mais compra) e o relatório por região. É opcional — sem itens, o débito funciona como antes, só com valor e descrição.</p>
+                        <div id="carrinho-lista">
+                            <p class="carrinho-itens__vazio">Nenhum item adicionado.</p>
+                        </div>
+                        <div class="carrinho-itens__total" id="carrinho-total" hidden>Total dos itens: <span id="carrinho-total-valor">R$ 0,00</span></div>
+                    </div>
+
+                    <div class="form-acoes">
+                        <a href="contas-receber.html" class="btn-secundario">Cancelar</a>
+                        <button type="submit" class="btn-primario" id="btn-salvar">Registrar Débito</button>
+                    </div>
+
+                </form>
+
+            </div>
+
+            <footer class="rodape" id="rodape"></footer>
+        </main>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/store-api.js"></script>
+    <script src="js/format.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/registro-debito.js"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- ============================================================
+    Elogest Recebe Fácil — dashboard.html
+    Painel principal: cards de métricas, gráfico de distribuição
+    por status, cobranças vencidas e próximos vencimentos.
+    Dados simulados — ver js/store.js.
+    ============================================================ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/webp" href="assets/icon-elogest.webp">
+    <title>Elogest Recebe Fácil — Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <aside class="sidebar" id="sidebar"></aside>
+        <div class="overlay" id="overlay"></div>
+
+        <main class="conteudo-principal">
+            <header class="header" id="header"></header>
+
+            <div class="conteudo-area">
+
+                <div class="pagina-titulo-area">
+                    <h1 class="titulo-pagina">Dashboard</h1>
+                    <p class="descricao-pagina">Visão geral das cobranças e contas a receber</p>
+                </div>
+
+                <div class="cards-grid" id="cards-grid">
+                    <div class="skeleton-card"><div class="skeleton skeleton-avatar"></div><div style="flex:1"><div class="skeleton skeleton-linha" style="margin-bottom:8px"></div><div class="skeleton skeleton-linha skeleton-linha--curta"></div></div></div>
+                    <div class="skeleton-card"><div class="skeleton skeleton-avatar"></div><div style="flex:1"><div class="skeleton skeleton-linha" style="margin-bottom:8px"></div><div class="skeleton skeleton-linha skeleton-linha--curta"></div></div></div>
+                    <div class="skeleton-card"><div class="skeleton skeleton-avatar"></div><div style="flex:1"><div class="skeleton skeleton-linha" style="margin-bottom:8px"></div><div class="skeleton skeleton-linha skeleton-linha--curta"></div></div></div>
+                    <div class="skeleton-card"><div class="skeleton skeleton-avatar"></div><div style="flex:1"><div class="skeleton skeleton-linha" style="margin-bottom:8px"></div><div class="skeleton skeleton-linha skeleton-linha--curta"></div></div></div>
+                </div>
+
+                <div class="painel-grafico" id="painel-grafico" hidden>
+                    <div class="painel-grafico__canvas-wrap">
+                        <canvas id="grafico-status" width="168" height="168"></canvas>
+                        <div class="painel-grafico__centro">
+                            <span class="painel-grafico__centro-valor" id="grafico-total">R$ 0</span>
+                            <span class="painel-grafico__centro-label">em aberto</span>
+                        </div>
+                    </div>
+                    <div class="painel-grafico__legenda" id="painel-grafico-legenda"></div>
+                </div>
+
+                <div class="pagina-titulo-area">
+                    <h2 class="titulo-secao">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2">
+                            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                            <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+                        </svg>
+                        Cobranças Vencidas — Atenção Necessária
+                    </h2>
+                </div>
+
+                <div class="tabela-container">
+                    <table class="tabela">
+                        <thead>
+                            <tr><th>Cliente</th><th>Descrição</th><th>Valor</th><th>Vencimento</th><th>Ação</th></tr>
+                        </thead>
+                        <tbody id="dashboard-vencidos-tbody">
+                            <tr class="skeleton-tabela-linha"><td colspan="5"><div class="skeleton skeleton-linha"></div></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="pagina-titulo-area" style="margin-top: 36px;">
+                    <h2 class="titulo-secao">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                        Próximos Vencimentos
+                    </h2>
+                </div>
+
+                <div class="tabela-container">
+                    <table class="tabela">
+                        <thead>
+                            <tr><th>Cliente</th><th>Descrição</th><th>Valor</th><th>Vencimento</th><th>Status</th></tr>
+                        </thead>
+                        <tbody id="dashboard-proximos-tbody">
+                            <tr class="skeleton-tabela-linha"><td colspan="5"><div class="skeleton skeleton-linha"></div></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+            <footer class="rodape" id="rodape"></footer>
+        </main>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/store-api.js"></script>
+    <script src="js/format.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/whatsapp.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- ============================================================
+    Elogest Recebe Fácil — contas-receber.html
+    Lista completa de débitos, com filtros por status, cobrança
+    via WhatsApp e "marcar como pago" (dados simulados — js/store.js).
+    ============================================================ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/webp" href="assets/icon-elogest.webp">
+    <title>Elogest Recebe Fácil — Contas a Receber</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <aside class="sidebar" id="sidebar"></aside>
+        <div class="overlay" id="overlay"></div>
+
+        <main class="conteudo-principal">
+            <header class="header" id="header"></header>
+
+            <div class="conteudo-area">
+
+                <div class="pagina-titulo-area--com-acao">
+                    <div>
+                        <h1 class="titulo-pagina">Contas a Receber</h1>
+                        <p class="descricao-pagina">Controle todas as cobranças e débitos dos clientes</p>
+                    </div>
+                    <a href="registro-debito.html" class="btn-primario">+ Novo Débito</a>
+                </div>
+
+                <div class="filtros">
+                    <span class="filtros__label">Filtrar:</span>
+                    <button class="filtro-btn filtro-btn--todos filtro-btn--ativo" data-filtro="todos">Todos (<span id="contador-todos">0</span>)</button>
+                    <button class="filtro-btn filtro-btn--pendente" data-filtro="pendente">Pendentes (<span id="contador-pendentes">0</span>)</button>
+                    <button class="filtro-btn filtro-btn--vencido" data-filtro="vencido">Vencidos (<span id="contador-vencidos">0</span>)</button>
+                    <button class="filtro-btn filtro-btn--pago" data-filtro="pago">Pagos (<span id="contador-pagos">0</span>)</button>
+                </div>
+
+                <div class="tabela-container">
+                    <table class="tabela">
+                        <thead>
+                            <tr><th>Cliente</th><th>Descrição</th><th>Valor</th><th>Criação</th><th>Vencimento</th><th>Status</th><th>Ações</th></tr>
+                        </thead>
+                        <tbody id="contas-receber-tbody">
+                            <tr class="skeleton-tabela-linha"><td colspan="7"><div class="skeleton skeleton-linha"></div></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="resumo-financeiro">
+                    <div class="resumo-financeiro__item">
+                        <span class="resumo-financeiro__label">Total Pendente</span>
+                        <span class="resumo-financeiro__valor resumo-financeiro__valor--pendente" id="resumo-pendente">R$ 0,00</span>
+                    </div>
+                    <div class="resumo-financeiro__separador"></div>
+                    <div class="resumo-financeiro__item">
+                        <span class="resumo-financeiro__label">Total Vencido</span>
+                        <span class="resumo-financeiro__valor resumo-financeiro__valor--vencido" id="resumo-vencido">R$ 0,00</span>
+                    </div>
+                    <div class="resumo-financeiro__separador"></div>
+                    <div class="resumo-financeiro__item">
+                        <span class="resumo-financeiro__label">Total Recebido</span>
+                        <span class="resumo-financeiro__valor resumo-financeiro__valor--pago" id="resumo-pago">R$ 0,00</span>
+                    </div>
+                    <div class="resumo-financeiro__separador"></div>
+                    <div class="resumo-financeiro__item">
+                        <span class="resumo-financeiro__label">Total Geral</span>
+                        <span class="resumo-financeiro__valor resumo-financeiro__valor--total" id="resumo-total">R$ 0,00</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <footer class="rodape" id="rodape"></footer>
+        </main>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/store-api.js"></script>
+    <script src="js/format.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/whatsapp.js"></script>
+    <script src="js/contas-receber.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- ============================================================
+    Elogest Recebe Fácil — regioes.html
+    Relatório por região/bairro: quais regiões mais compram e quais
+    produtos mais saem (dados simulados — js/store.js).
+    ============================================================ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/webp" href="assets/icon-elogest.webp">
+    <title>Elogest Recebe Fácil — Regiões</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <aside class="sidebar" id="sidebar"></aside>
+        <div class="overlay" id="overlay"></div>
+
+        <main class="conteudo-principal">
+            <header class="header" id="header"></header>
+
+            <div class="conteudo-area">
+
+                <div class="pagina-titulo-area">
+                    <h1 class="titulo-pagina">Regiões</h1>
+                    <p class="descricao-pagina">Descubra quais bairros mais compram e quais produtos saem mais</p>
+                </div>
+
+                <div id="banner-lider"></div>
+
+                <div class="grid-2-colunas" style="grid-template-columns: 2fr 1fr;">
+                    <div class="painel-ranking">
+                        <h3 class="painel-ranking__titulo">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            Top 5 regiões por valor gasto
+                        </h3>
+                        <div id="grafico-regioes">
+                            <div class="skeleton skeleton-linha" style="margin-bottom:14px"></div>
+                            <div class="skeleton skeleton-linha" style="margin-bottom:14px"></div>
+                            <div class="skeleton skeleton-linha"></div>
+                        </div>
+                    </div>
+                    <div class="painel-ranking">
+                        <h3 class="painel-ranking__titulo">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                            Produtos que mais faturam
+                        </h3>
+                        <div id="ranking-produtos-geral">
+                            <div class="skeleton skeleton-linha" style="margin-bottom:14px"></div>
+                            <div class="skeleton skeleton-linha" style="margin-bottom:14px"></div>
+                            <div class="skeleton skeleton-linha"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="titulo-secao">Todas as regiões</h2>
+                    <div class="tabela-container">
+                        <table class="tabela">
+                            <thead>
+                                <tr><th>Bairro / Região</th><th>Clientes</th><th>Total Gasto</th><th>Recebido</th><th>Em Aberto</th><th>Ticket Médio</th></tr>
+                            </thead>
+                            <tbody id="tabela-regioes-tbody">
+                                <tr class="skeleton-tabela-linha"><td colspan="6"><div class="skeleton skeleton-linha"></div></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+            <footer class="rodape" id="rodape"></footer>
+        </main>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/store-api.js"></script>
+    <script src="js/format.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/regioes.js"></script>
+</body>
+</html>

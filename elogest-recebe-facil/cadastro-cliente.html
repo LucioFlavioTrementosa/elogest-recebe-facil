@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- ============================================================
+    Elogest Recebe Fácil — cadastro-cliente.html
+    Formulário de cadastro de clientes (dados simulados — js/store.js).
+    ============================================================ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/webp" href="assets/icon-elogest.webp">
+    <title>Elogest Recebe Fácil — Novo Cliente</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <aside class="sidebar" id="sidebar"></aside>
+        <div class="overlay" id="overlay"></div>
+
+        <main class="conteudo-principal">
+            <header class="header" id="header"></header>
+
+            <div class="conteudo-area">
+
+                <div class="pagina-titulo-area">
+                    <h1 class="titulo-pagina">Cadastrar Novo Cliente</h1>
+                    <p class="descricao-pagina">Preencha os dados do cliente para cadastrá-lo no sistema</p>
+                </div>
+
+                <form class="form-container" id="form-cliente" novalidate>
+
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label class="form-label" for="nome_cliente">Nome Completo *</label>
+                            <input type="text" id="nome_cliente" name="nome_cliente" class="form-input" placeholder="Ex: Maria da Silva" required maxlength="120">
+                            <span class="form-field__erro" id="erro-nome_cliente"></span>
+                        </div>
+                        <div class="form-field">
+                            <label class="form-label" for="cpf_cnpj">CPF ou CNPJ *</label>
+                            <input type="text" id="cpf_cnpj" name="cpf_cnpj" class="form-input" placeholder="Ex: 000.000.000-01" required inputmode="numeric">
+                            <span class="form-field__erro" id="erro-cpf_cnpj"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label class="form-label" for="telefone_cliente">
+                                Telefone (WhatsApp) *
+                                <span class="form-label__dica">Usado para cobrança via WhatsApp</span>
+                            </label>
+                            <input type="tel" id="telefone_cliente" name="telefone_cliente" class="form-input" placeholder="Ex: (14) 99999-0001" required inputmode="numeric">
+                            <span class="form-field__erro" id="erro-telefone_cliente"></span>
+                        </div>
+                        <div class="form-field">
+                            <label class="form-label" for="email_cliente">E-mail</label>
+                            <input type="email" id="email_cliente" name="email_cliente" class="form-input" placeholder="Ex: cliente@email.com">
+                            <span class="form-field__erro" id="erro-email_cliente"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-field form-field--full">
+                            <label class="form-label" for="endereco_cliente">Endereço Completo</label>
+                            <input type="text" id="endereco_cliente" name="endereco_cliente" class="form-input" placeholder="Ex: Rua das Flores, 123 - Centro - Jaú/SP" maxlength="180">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label class="form-label" for="bairro_cliente">
+                                Bairro / Região
+                                <span class="form-label__dica">Usado no relatório de regiões</span>
+                            </label>
+                            <input type="text" id="bairro_cliente" name="bairro_cliente" class="form-input" placeholder="Ex: Centro" maxlength="80">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-field form-field--full">
+                            <label class="form-label" for="obs_cliente">
+                                Observações
+                                <span class="form-label__contador"><span id="contador-obs">0</span>/300</span>
+                            </label>
+                            <textarea id="obs_cliente" name="obs_cliente" class="form-input form-textarea" placeholder="Informações adicionais sobre o cliente..." rows="3" maxlength="300"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-acoes">
+                        <a href="clientes.html" class="btn-secundario">Cancelar</a>
+                        <button type="submit" class="btn-primario" id="btn-salvar">Salvar Cliente</button>
+                    </div>
+
+                </form>
+
+            </div>
+
+            <footer class="rodape" id="rodape"></footer>
+        </main>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/store.js"></script>
+    <script src="js/store-api.js"></script>
+    <script src="js/format.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/cliente-validacao.js"></script>
+    <script src="js/cadastro-cliente.js"></script>
+</body>
+</html>
